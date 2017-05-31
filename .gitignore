@@ -49,7 +49,10 @@ Temporary Items
 node_modules/*
 dis/*
 build/*
+build/svg/*
+build/images/*
+build/scss/*
+build/js/*
 src/svg/*
 src/images/*
 src/scss/*
-src/js/*
