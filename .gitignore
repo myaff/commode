@@ -48,8 +48,4 @@ Temporary Items
 
 node_modules/*
 dis/*
-build/*
 build/svg/*
-build/images/*
-build/scss/*
-build/js/*
