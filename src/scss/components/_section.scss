@@ -1,0 +1,170 @@
+$section-border: #cfcfcf;
+
+.section {
+	position: relative;
+	padding-bottom: 1px;
+	margin: 2rem 0;
+	
+	&::after {
+		@include pseudo-border-dashed(100%, $section-border);
+	}
+	
+	&-sale {
+		padding-bottom: 1.5rem;
+	}
+	
+	@include media-breakpoint-down(xs){
+		&-new-prods,
+		&-banner,
+		&-lookbook {
+			&::after {
+				display: none;
+			}
+		}
+	}
+	@include media-breakpoint-down(sm){
+		padding-bottom: 1.5rem;
+		
+		&-banner {
+			padding-bottom: 0;
+		}
+	}
+	@include media-breakpoint-up(sm){
+		&-banner {
+			padding-bottom: 2rem;
+		}
+	}
+	
+	@include media-breakpoint-up(md){
+		margin-bottom: 3rem;
+		padding-bottom: 2.5rem;
+		
+		&-banner {
+			margin-top: 4rem;
+			padding-bottom: 3.5rem;
+		}
+		&-sale {
+			margin-top: 3.5rem;
+		}
+	}
+	
+	&:last-of-type {
+		padding-bottom: 0;
+		margin-bottom: 1rem;
+		
+		@include media-breakpoint-up(md){
+			margin-bottom: 3.25rem;
+		}
+		
+		&::after {
+			display: none;
+		}
+	}
+	
+	&-title,
+	&-text,
+	&-btn {
+		text-align: center;
+	}
+	
+	&-title {
+		margin-bottom: 2rem;
+		
+		@include heading {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		
+		@include media-breakpoint-up(md){
+			margin-bottom: 3rem;
+		}
+		@include media-breakpoint-up(lg){
+			margin-bottom: 3.5rem;
+			
+			.section-lookbook & {
+				margin-bottom: 2.5rem;
+			}
+		}
+	}
+	
+	&-text {
+		@include media-breakpoint-down(xs){
+			font-size: 0.875rem;
+		}
+		
+		@include null-childs-margin;
+		
+		@include media-breakpoint-up(lg){
+			width: 65%;
+			margin: {
+				left: auto;
+				right: auto;
+			}
+		}
+		
+		.section-new-prods & {
+			margin-top: 0.75rem;
+			margin-bottom: 0.75rem;
+			@include media-breakpoint-up(lg){
+				margin-top: 1.5rem;
+				margin-bottom: 1.5rem;
+			}
+		}
+		.section-banner & {
+			margin-top: 1.5rem;
+			
+			@include media-breakpoint-up(lg){
+				margin-top: 3rem;
+				margin-bottom: 2rem;
+			}
+		}
+		
+		.section-lookbook & {
+			margin-bottom: 2rem;
+			
+			@include media-breakpoint-up(lg){
+				margin-bottom: 3rem;
+			}
+		}
+	}
+	
+	&-related-products {
+		padding: 0;
+	}
+	
+	&-banner &-img {
+		@include media-breakpoint-down(xs){
+			.img-fluid {
+				width: 100%;
+				height: calc(100vh - 4rem);
+			}
+		}
+	}
+	&-banner &-btn {
+		@include media-breakpoint-down(xs){
+			margin-top: -4.5rem;
+			
+			.btn {
+				margin-bottom: 2.5rem;
+			}
+		}
+		@include media-breakpoint-up(sm){
+			margin-top: 2rem;
+		}
+	}
+	
+	&-lookbook &-btn {
+		@include media-breakpoint-up(lg){
+			margin-top: 1rem;
+		}
+	}
+	
+	&-features {
+		//padding-bottom: 2.5rem;
+		font-size: 0.875rem;
+		
+		.card-feature {
+			margin-bottom: 0;
+		}
+	}
+}

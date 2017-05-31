@@ -1,0 +1,176 @@
+[data-toggle="collapse"] {
+	position: relative;
+	cursor: pointer;
+	
+	.icon {
+		position: relative;
+		display: inline-block;
+		@include size(1em);
+		margin-left: 0.5rem;
+		
+		&::before,
+		&::after {
+			content: '';
+			display: block;
+			@include absolute(top 50% left 0);
+			@include size(0.5rem, 1px);
+			background: currentColor;
+		}
+		&::after {
+			transform: rotate(90deg);
+			transition: transform 0.2s;
+		}
+	}
+	
+	.text-center &:not(.btn-icon)::before {
+		content: '';
+		display: inline-block;
+		@include size(1em);
+		margin-right: 0.5rem;
+	}
+	@each $breakpoint in map-keys($grid-breakpoints) {
+		.text-center.text-#{$breakpoint}-left &::before {
+			@include media-breakpoint-up($breakpoint){
+					display: none;
+			}
+		}
+	}
+	
+	&[aria-expanded="true"] .icon::after {
+		transform: none;
+	}
+	
+	&[data-collapse="xs-only"]{
+		@include media-breakpoint-up(sm){
+			cursor: auto;
+			.icon {
+				display: none;
+			}
+		}
+	}
+}
+
+.collapse-modal {
+	@include absolute(top 100% left 0);
+	width: 100%;
+	z-index: $zindex-dropdown;
+	background: $dropdown-bg;
+	
+	&-wrapper {
+		position: relative;
+	}
+	
+	&-sm {
+		font-size: 0.875rem;
+		width: 14rem;
+		color: $body-color;
+		margin-top: 10px;
+		left: auto;
+		right: 0;
+		
+		body:not(.home-page) .header &,
+		.home-page .header.scrolled & {
+			box-shadow: $dropdown-box-shadow;
+		}
+	}
+	
+	.modal-footer & {
+		font-size: 0.875rem;
+		color: $body-color;
+		margin-top: 1rem;
+		left: 0;
+		right: 0;
+		
+		
+		&::before {
+			content: '';
+			@include triangle(0.75rem, top, 1.5rem, $dropdown-bg);
+			@include absolute(top -0.75rem left 50%);
+			margin-left: -0.75rem;
+		}
+		&.search-form {
+			margin-top: 0;
+			
+			&::before {
+				left: 1rem;
+				margin-left: 0;
+			}
+		}
+	}
+	
+	&-fullwidth {
+		@include fullwidth;
+	}
+	
+	&-content {
+		padding: 1.5rem 1.5rem 3rem;
+	}
+	
+	&.catalog-nav-menu {
+		box-shadow: $dropdown-box-shadow;
+	}
+	
+	&-header,
+	&-body,
+	&-footer {
+		position: relative;
+		padding: 1rem 1.25rem;
+	}
+	
+	&-footer {
+		padding-bottom: 2rem;
+	}
+	
+	&-sm &-header,
+	&-sm &-footer {
+		&::after {
+			@include pseudo-border-dashed(100%, #cfcfcf, 1px);
+			left: 0;
+		}
+	}
+	&-sm &-footer {
+		&::after {
+			top: 0;
+			bottom: auto;
+		}
+	}
+	
+	&-fullwidth.text-center &-body.contacts {
+		&::after {
+			@include pseudo-border-dashed(4.5rem);
+			left: 50%;
+			margin-left: -2.25rem;
+		}
+	}
+	
+	&.collapse-mobile {
+		@include media-breakpoint-up(sm){
+			@include relative(top 0 left 0);
+			width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+			padding: 0;
+			z-index: 1;
+			box-shadow: none;
+			
+			> .nav {
+				padding: 0;
+			}
+		}
+	}
+	
+	.btn-icon,
+	.header & .btn-icon,
+	.home-page .header:not(.scrolled) & .btn-icon {
+		color: $body-color;
+	}
+	
+	.btn-close {
+		@include absolute(bottom 1.25rem right 1.25rem);
+		
+		&-sm {
+			bottom: 0.5rem;
+			right: 0.5rem;
+		}
+	}
+}

@@ -1,0 +1,218 @@
+//
+// Headings
+//
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: $headings-margin-bottom;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  color: $headings-color;
+}
+
+h1, .h1 { font-size: $font-size-h1; }
+h2, .h2 { font-size: $font-size-h2; }
+h3, .h3 { font-size: $font-size-h3; }
+h4, .h4 { 
+	font-size: $font-size-h4;
+	@include media-breakpoint-down(sm){
+		font-size: $font-size-h4 * 0.875;
+	}
+}
+h5, .h5 { font-size: $font-size-h5; }
+h6, .h6 { font-size: $font-size-h6; }
+
+.lead {
+  font-size: $lead-font-size;
+  font-weight: $lead-font-weight;
+}
+
+@mixin get-display-variant($size-mobile, $size, $weight, $line-height, $font-family: false){
+	@if $font-family != false {
+		font-family: $font-family;
+	}
+	font-size: $size-mobile;
+	font-weight: $weight;
+	line-height: $line-height;
+	
+	@include heading {
+		font: {
+			family: inherit;
+			size: inherit;
+			weight: inherit;
+		};
+		line-height: inherit;
+	};
+	
+	@if $size-mobile != $size {
+		@include media-breakpoint-up(md) {
+			font-size: $size;
+		}
+	}
+}
+
+.block-title {
+	font-size: 1rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 1.5rem;
+	
+	&-sb {
+		font-weight: $font-weight-bold;
+	}
+	
+	@include heading {
+		font-size: inherit;
+		font-weight: inherit;
+	}
+}
+
+// Type display classes
+.display-1 {
+  @include get-display-variant($display-size-mobile, $display1-size, $display1-weight, $display-line-height);
+}
+.display-2 {
+  @include get-display-variant($display-size-mobile, $display2-size, $display2-weight, $display-line-height);
+}
+.display-3 {
+  @include get-display-variant($display-size-mobile, $display3-size, $display3-weight, $display-line-height);
+}
+.display-4 {
+  @include get-display-variant($display-size-mobile, $display4-size, $display4-weight, $display-line-height);
+}
+.display-narrow {
+	@include get-display-variant($font-size-h3, $font-size-h2, 700, $display-line-height, $font-heading);
+	text-transform: uppercase;
+}
+.display-lines {
+	@include get-display-variant(1rem, 1rem, $font-weight-normal, $display-line-height);
+	text-transform: uppercase;
+	
+	&::before,
+	&::after {
+		content: '';
+		display: block;
+		@include size(auto, 1px);
+		flex: 1 1 auto;
+		background: $gray-lighter;
+	}
+	
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: space-between;
+	
+	@include heading {
+		margin-left: 1.5rem;
+		margin-right: 1.5rem;
+	}
+}
+
+//
+// Horizontal rules
+//
+
+hr {
+  margin-top: $spacer-y*1.25;
+  margin-bottom: $spacer-y*1.25;
+  border: 0;
+  border-top: $hr-border-width solid $hr-border-color;
+  
+  .product-detail & {
+	@include fullwidth;
+	margin-bottom: $spacer-y*1.5;
+	
+	@include media-breakpoint-up(md){
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: $spacer-y*2.5;
+	}
+  }
+}
+
+
+//
+// Emphasis
+//
+
+small,
+.small {
+  font-size: $small-font-size;
+  font-weight: $font-weight-normal;
+}
+
+mark,
+.mark {
+  padding: $mark-padding;
+  background-color: $mark-bg;
+}
+
+
+//
+// Lists
+//
+
+.list-unstyled {
+  @include list-unstyled;
+}
+
+// Inline turns list items into inline-block
+.list-inline {
+  @include list-unstyled;
+}
+.list-inline-item {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: $list-inline-padding;
+  }
+}
+
+
+//
+// Misc
+//
+
+// Builds on `abbr`
+.initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+
+// Blockquotes
+.blockquote {
+  padding: ($spacer / 2) $spacer;
+  margin-bottom: $spacer;
+  font-size: $blockquote-font-size;
+  border-left: $blockquote-border-width solid $blockquote-border-color;
+}
+
+.blockquote-footer {
+  display: block;
+  font-size: 80%; // back to default font-size
+  color: $blockquote-small-color;
+
+  &::before {
+    content: "\2014 \00A0"; // em dash, nbsp
+  }
+}
+
+// Opposite alignment of blockquote
+.blockquote-reverse {
+  padding-right: $spacer;
+  padding-left: 0;
+  text-align: right;
+  border-right: $blockquote-border-width solid $blockquote-border-color;
+  border-left: 0;
+}
+
+.blockquote-reverse .blockquote-footer {
+  &::before {
+    content: "";
+  }
+  &::after {
+    content: "\00A0 \2014"; // nbsp, em dash
+  }
+}

@@ -1,0 +1,20 @@
+.logo {
+	display: block;
+	margin: 0 auto;
+	width: 8.125rem;
+	height: 1.875rem;
+	color: inherit;
+	
+	svg {
+		@include size(100%);
+	}
+	
+	@include media-breakpoint-up(md) {
+		width: 10rem;
+		height: 2.25rem;
+		
+		&-wrapper {
+			margin-top: 1rem;
+		}
+	}
+}

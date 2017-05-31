@@ -1,0 +1,46 @@
+$footer-bg: $gray-lightest;
+$footer-color: $body-color;
+$footer-font-size: 0.875rem;
+
+.footer {
+	width: 100%;
+	padding: 1.625rem 0;
+	font-size: $footer-font-size;
+	
+	@include media-breakpoint-up(md){
+		padding: 3rem 0 4rem;
+	}
+	
+	background: $footer-bg;
+	color: $footer-color;
+	
+	&-content-top {
+		margin-bottom: 2.5rem;
+		
+		@include media-breakpoint-up(md){
+			margin-bottom: 7.5rem;
+		}
+		
+		.block-title {
+			padding: 1rem 0;
+			margin: 0;
+			font-weight: $font-weight-normal;
+		}
+	}
+	
+	&-text {
+		font-size: $small-font-size;
+		
+		@include media-breakpoint-up(sm){
+			font-size: $footer-font-size;
+		}
+	}
+	
+	&-btn-group {
+		margin-bottom: 2.5rem;
+		
+		@include media-breakpoint-up(md){
+			margin-bottom: 0;
+		}
+	}
+}

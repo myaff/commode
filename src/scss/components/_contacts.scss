@@ -1,0 +1,44 @@
+.contacts {
+	.tel {
+		font-weight: 500;
+		
+		& + .tel {
+			margin-left: 0.25rem;
+		}
+		
+		&-wrapper {
+			position: relative;
+			padding-bottom: 1.5em;
+			margin-bottom: 1.5em;
+			
+			&::after {
+				content: '';
+				display: block;
+				@include absolute(left 50% bottom 0);
+				@include size(2rem, 0.125rem);
+				margin-left: -1rem;
+				background: currentColor;
+				
+				@include media-breakpoint-up(sm){
+					left: 0;
+					margin-left: 0;
+				}
+			}
+		}
+	}
+	.address {
+		@include null-childs-margin;
+	}
+	
+	.modal-fullwidth & {
+		.title {
+			display: block;
+			font-weight: 500;
+		}
+		&-btn.btn-block,
+		.address {
+			max-width: 12rem;
+			@include center-block;
+		}
+	}
+}

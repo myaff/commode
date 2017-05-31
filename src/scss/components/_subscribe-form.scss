@@ -1,0 +1,37 @@
+.subscribe {
+	&-form {
+		max-width: 460px;
+		@include center-block;
+	}
+	
+	&-field {
+		@include media-breakpoint-up(sm){
+			flex: 1 1 auto;
+		}
+	}
+	
+	&-btn {
+		display: block;
+		width: 100%;
+		
+		@include media-breakpoint-up(sm){
+			display: inline-block;
+			width: auto;
+			flex: 0 1 150px;
+		}
+	}
+}
+
+.card-subscribe {
+	.card-block {
+		padding-bottom: 2rem;
+		
+		@include media-breakpoint-up(sm){
+			padding-top: 2rem;
+		}
+	}
+	
+	@include media-breakpoint-up(md){
+		border-width: 2px;
+	}
+}

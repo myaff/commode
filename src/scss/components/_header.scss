@@ -1,0 +1,81 @@
+$header-bg: $body-bg;
+$header-color: $body-color;
+$header-border: $gray-lighter;
+
+$header-bg--hp: transparent;
+$header-color--hp: #ffffff;
+$header-border--hp: transparent;
+
+.header {
+	width: 100vw;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	
+	.no-touch & {
+		padding-right: 17px;
+	}
+	
+	background: $header-bg;
+	color: $header-color;
+	border-bottom: 1px solid $header-border;
+	
+	> .container-fluid {
+		padding-left: map-get($grid-gutter-widths, xs);
+		padding-right: map-get($grid-gutter-widths, xs);
+		
+		@include media-breakpoint-up(sm) {
+			padding-left: map-get($grid-gutter-widths, sm);
+			padding-right: map-get($grid-gutter-widths, sm);
+		}
+	}
+	
+	transition: background .2s, color .2s, border-color .2s;
+	
+	& ~ .page-area {
+		padding-top: 5.5rem;
+		
+		@include media-breakpoint-up(sm) {
+			padding-top: 6.5rem;
+		}
+		
+		.home-page & {
+			padding-top: 0;
+		}
+	}
+	
+	.home-page:not(.modal-open) &:not(.scrolled) {
+		background: $header-bg--hp;
+		color: $header-color--hp;
+		border-color: $header-border--hp;
+		
+		.btn-icon {
+			color: $header-color--hp;
+			
+			&-count--over {
+				color: $black;
+			}
+		}
+	}
+	
+	.modal-open & {
+		background: transparent;
+		border-color: transparent;
+		z-index: $zindex-modal + 1;
+	}
+	
+	.btn-icon {
+		transition: none;
+		color: $header-color;
+		
+		&-count--over {
+			color: $white;
+		}
+	}
+	
+	.btn-wrapper {
+		margin-right: 2rem;
+	}
+}
+
+@import 'btn-menu';
+@import 'logo';

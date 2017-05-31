@@ -1,0 +1,339 @@
+// scss-lint:disable QualifyingElement
+
+//
+// Base styles
+//
+
+.btn {
+  position: relative;
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  cursor: pointer;
+  border: $btn-border-width solid transparent;
+  @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-border-radius);
+  @include transition($btn-transition);
+  
+  @include media-breakpoint-down(sm){
+	border-width: 1px;
+  }
+
+  // Share hover and focus styles
+  @include hover-focus {
+    text-decoration: none;
+  }
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: $btn-focus-box-shadow;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    cursor: $cursor-disabled;
+    opacity: .65;
+    @include box-shadow(none);
+  }
+
+  &:active,
+  &.active {
+    background-image: none;
+    @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+  }
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
+}
+
+
+//
+// Alternate buttons
+//
+
+.btn-primary {
+  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+}
+.btn-secondary {
+  @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+}
+.btn-info {
+  @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+}
+.btn-success {
+  @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+}
+.btn-warning {
+  @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
+}
+.btn-danger {
+  @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+}
+.btn-dark {
+  @include button-variant($btn-dark-color, $btn-dark-bg, $btn-dark-border);
+}
+.btn-light {
+  @include button-variant($btn-light-color, $btn-light-bg, $btn-light-border);
+}
+
+// Remove all backgrounds
+.btn-outline-primary {
+  @include button-outline-variant($btn-primary-bg);
+}
+.btn-outline-secondary {
+  @include button-outline-variant($btn-secondary-border);
+}
+.btn-outline-info {
+  @include button-outline-variant($btn-info-bg);
+}
+.btn-outline-success {
+  @include button-outline-variant($btn-success-bg);
+}
+.btn-outline-warning {
+  @include button-outline-variant($btn-warning-bg);
+}
+.btn-outline-danger {
+  @include button-outline-variant($btn-danger-bg);
+}
+.btn-outline-dark {
+  @include button-outline-variant($btn-dark-bg);
+  
+  &.btn-dropdown {
+	width: 100%;
+	max-width: 100%;
+	border-width: 1px;
+	text-transform: uppercase;
+	font-size: 0.875rem;
+	
+	@include plain-hover-focus {
+		background: transparent;
+		color: $btn-dark-bg;
+	}
+	
+	.btn-dropdown-arrow {
+		@include absolute(top 1rem right 1rem);
+		@include size(1rem);
+		color: $black;
+	}
+  }
+}
+.btn-outline-light {
+  @include button-outline-variant($btn-light-bg, $black);
+}
+
+
+//
+// Link buttons
+//
+
+// Make a button look and behave like a link
+.btn-link {
+  color: $btn-link-color;
+  border-radius: 0;
+  text-decoration: underline;
+  text-decoration-color: $gray-light;
+
+  &,
+  &:active,
+  &.active,
+  &:disabled {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  &,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  @include hover {
+    border-color: transparent;
+  }
+  @include hover-focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+    background-color: transparent;
+  }
+  &:disabled {
+    color: $btn-link-disabled-color;
+
+    @include hover-focus {
+      text-decoration: none;
+    }
+  }
+}
+
+//
+// Button Sizes
+//
+
+.btn-lg {
+  // line-height: ensure even-numbered height of button next to large input
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
+  
+  &.btn-icon {
+	@include button-size(0, 0, 1.75rem, $btn-border-radius-lg);
+	
+	&.btn-favorite {
+		font-size: 1.375rem;
+	}
+  }
+}
+.btn-md {
+	@include button-size(1rem, 1.25rem, 0.875rem, 0);
+}
+.btn-sm {
+  // line-height: ensure proper height of button next to small input
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
+}
+
+
+
+//
+// Special text styles for buttons
+//
+.btn-exp {
+	font: {
+		family: $font-special;
+		weight: 700;
+	};
+	text-transform: uppercase;
+	letter-spacing: 0.5em;
+}
+.btn-sb {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.btn-bold {
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+}
+
+
+
+//
+// Button with icon
+//
+
+.btn-icon {
+	padding: 0;
+	border: 0;
+	
+	& + &,
+	.btn-wrapper + & {
+		margin-left: 0.5rem;
+	}
+  
+  &.btn-phone + &.btn-favorite {
+	margin-left: 2.5rem;
+  }
+  &.btn-link-back &-img {
+	font-size: 0.875rem;
+  }
+
+  &.btn,
+  &.btn:active,
+  &.btn.active,
+  &.btn:disabled {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  &,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  @include hover {
+    border-color: transparent;
+  }
+  @include hover-focus {
+    color: $link-hover-color;
+    text-decoration: none;
+    background-color: transparent;
+  }
+  
+  &-img {
+	vertical-align: middle;
+  }
+  
+  &-text {
+	//font-size: 1rem;
+	
+	@each $class, $line in (lined: solid, dashed: dashed, dotted: dotted){
+		&--#{$class} {
+			border-bottom: 1px $line currentColor;
+		}
+	}
+  }
+  
+  &-img + &-text,
+  &-text + &-img,
+  &-img + &-count,
+  &-count + &-img{
+	margin-left: 0.5em;
+  }
+  
+  &-count,
+  &-count--over  {
+    display: inline-block;
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 1rem;
+	text-align: center;
+	vertical-align: middle;
+  }
+  
+  &-count--over {
+	position: absolute;
+	bottom: 0.25rem;
+	left: 0;
+	width: 100%;
+	color: #fff;
+  }
+  
+  &-outline.btn-icon {
+	padding: 0.75rem 1rem;
+	padding-right: 1.25rem;
+	border: 1px solid currentColor;
+	border-radius: 1.5rem;
+  }
+}
+
+
+//
+// Block button
+//
+
+%btn-block {
+  display: block;
+  width: 100%;
+}
+.btn-block {
+	@extend %btn-block;
+}
+.btn-center {
+	@include center-block;
+	max-width: 230px;
+	flex-basis: 230px;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: $btn-block-spacing-y;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	
+  &.btn-block {
+    width: 100%;
+  }
+}

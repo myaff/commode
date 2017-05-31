@@ -1,0 +1,13 @@
+.social-btn-group {
+	.btn-icon {
+		padding: 0.25rem;
+	}
+	
+	.btn-vk .btn-icon-img {
+		@include size(2rem, 1.375rem);
+	}
+	
+	.btn-inst .btn-icon-img {
+		@include size(1.375rem);
+	}
+}

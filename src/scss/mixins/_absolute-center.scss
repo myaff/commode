@@ -1,0 +1,22 @@
+/// Выравнивание элементов по центру
+///
+/// @access public
+/// @group Utilities
+///
+///
+/// @example scss - Использование
+/// .element {
+///	  	@include absolute-center();
+///	}
+///	@example css - Вывод CSS
+///	.element {
+/// 	position: absolute;
+/// 	top: 50%;
+/// 	left: 50%;
+/// 	transform: translate(-50%, -50%);
+///	}
+
+@mixin absolute-center() {
+	@include absolute(top 50% left 50%);
+	transform: translate(-50%, -50%);
+}

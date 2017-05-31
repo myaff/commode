@@ -1,0 +1,32 @@
+.btn-close {
+	position: relative;
+	@include size(1.25rem);
+	cursor: pointer;
+	
+	&::before,
+	&::after {
+		content: '';
+		display: block;
+		@include absolute(top 50% left -0.25rem);
+		@include size(1.5rem, 1px);
+		background: currentColor;
+	}
+	
+	&::before {
+		transform: rotate(45deg);
+	}
+	&::after {
+		transform: rotate(-45deg);
+	}
+	
+	&-sm {
+		@include size(2rem);
+		padding: 0.5rem;
+		
+		&::before,
+		&::after {
+			@include size(1.25rem, 1px);
+			left: 0.125rem;
+		}
+	}
+}

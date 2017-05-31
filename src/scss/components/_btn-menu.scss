@@ -1,0 +1,43 @@
+.btn-menu {
+	position: relative;
+	width: 2.5rem;
+	height: 1.875rem;
+	padding: 0;
+	border: 0;
+	color: inherit;
+	cursor: pointer;
+	
+	div {
+		position: absolute;
+		@include size(100%, 2px);
+		top: 0.875rem;
+		left: 0;
+		color: inherit;
+		background: currentColor;
+		transition: transform 0.3s;
+	}
+	
+	div {		
+		&:first-child {
+			transform: translateY(-0.875rem);
+		}
+		
+		&:last-child {
+			transform: translateY(0.875rem);
+		}
+	}
+	
+	.modal-open & {
+		div {
+			&:nth-child(2) {
+				transform: scaleX(0);
+			}
+			&:first-child {
+				transform: translateY(0) rotate(45deg);
+			}
+			&:last-child {
+				transform: translateY(0) rotate(-45deg);
+			}
+		}
+	}
+}

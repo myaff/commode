@@ -1,0 +1,8 @@
+@mixin pseudo-border-dashed($width: 100%, $color: #cccccc, $height: 1px){
+	$bg: str-replace(url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 1'><rect fill='#{$color}' x='0' y='0' width='6' height='1'/></svg>"), "#", "%23");
+	content: '';
+	display: block;
+	@include size($width, $height);
+	@include absolute(bottom 0);
+	background: $bg repeat-x;
+}
