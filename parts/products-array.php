@@ -1,0 +1,366 @@
+<?php 
+$products = [
+	1 => [
+		"name" => "Закрытое платье&#8209;мини из&nbsp;матовой экокожи W&#8209;HITE by&nbsp;WTfC",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-2.jpg",
+			"alt" => "Product 1",
+		],
+		"price" => 7890,
+		"likes" => 0,
+		"articul" => "1832-01",
+		"count" => 1,
+	],
+	2  => [
+		"name" => "Расшитое бисером платье&#8209;бюстье с&nbsp;сетчатой юбкой Name",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-3.jpg",
+			"alt" => "Product 2",
+		],
+		"price" => 6590,
+		"likes" => 1,
+		"articul" => "1832-02",
+		"count" => 6,
+	],
+	3  => [
+		"name" => "Платье&#8209;рубашка в&nbsp;бельевом стиле из&nbsp;атласа и&nbsp;кружева Meet&nbsp;Me",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-4.jpg",
+			"alt" => "Product 3",
+		],
+		"price" => 6990,
+		"likes" => 14,
+		"articul" => "1832-03",
+		"count" => 2,
+	],
+	4  => [
+		"name" => "Полупрозрачное платье в&nbsp;викторианском стиле TOP20&nbsp;Studio",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-5.jpg",
+			"alt" => "Product 4",
+		],
+		"price" => 9690,
+		"likes" => 15,
+		"articul" => "1832-04",
+		"count" => 1,
+	],
+	5  => [
+		"name" => "Закрытое платье&#8209;мини из&nbsp;матовой экокожи W&#8209;HITE by&nbsp;WTfC",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-6.jpg",
+			"alt" => "Product 5",
+		],
+		"price" => 7890,
+		"likes" => 22,
+		"articul" => "1832-05",
+		"count" => 2,
+	],
+	6  => [
+		"name" => "Расшитое бисером платье&#8209;бюстье с&nbsp;сетчатой юбкой Name",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-7.jpg",
+			"alt" => "Product 6",
+		],
+		"price" => 6590,
+		"likes" => 80,
+		"articul" => "1832-06",
+		"count" => 3,
+	],
+	7  => [
+		"name" => "Платье&#8209;рубашка в&nbsp;бельевом стиле из&nbsp;атласа и&nbsp;кружева Meet&nbsp;Me",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-8.jpg",
+			"alt" => "Product 7",
+		],
+		"price" => 6990,
+		"likes" => 99,
+		"articul" => "1832-07",
+		"count" => 12,
+	],
+	8  => [
+		"name" => "Полупрозрачное платье в&nbsp;викторианском стиле TOP20&nbsp;Studio",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-9.jpg",
+			"alt" => "Product 8",
+		],
+		"price" => 9690,
+		"likes" => 66,
+		"articul" => "1832-08",
+		"count" => 6,
+	],
+	9  => [
+		"name" => "Закрытое платье&#8209;мини из&nbsp;матовой экокожи W&#8209;HITE by&nbsp;WTfC",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-2.jpg",
+			"alt" => "Product 9",
+		],
+		"price" => 7890,
+		"likes" => 0,
+		"articul" => "1832-09",
+		"count" => 4,
+	],
+	10 => [
+		"name" => "Расшитое бисером платье&#8209;бюстье с&nbsp;сетчатой юбкой Name",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-3.jpg",
+			"alt" => "Product 10",
+		],
+		"price" => 6590,
+		"likes" => 1,
+		"articul" => "1832-10",
+		"count" => 20,
+	],
+	11 => [
+		"name" => "Платье&#8209;рубашка в&nbsp;бельевом стиле из&nbsp;атласа и&nbsp;кружева Meet&nbsp;Me",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-4.jpg",
+			"alt" => "Product 11",
+		],
+		"price" => 6990,
+		"likes" => 14,
+		"articul" => "1832-11",
+		"count" => 9,
+	],
+	12 => [
+		"name" => "Полупрозрачное платье в&nbsp;викторианском стиле TOP20&nbsp;Studio",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-5.jpg",
+			"alt" => "Product 12",
+		],
+		"price" => 9690,
+		"likes" => 15,
+		"articul" => "1832-12",
+		"count" => 7,
+	],
+	13 => [
+		"name" => "Закрытое платье&#8209;мини из&nbsp;матовой экокожи W&#8209;HITE by&nbsp;WTfC",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-6.jpg",
+			"alt" => "Product 13",
+		],
+		"price" => 7890,
+		"likes" => 22,
+		"articul" => "1832-13",
+		"count" => 11,
+	],
+	14 => [
+		"name" => "Расшитое бисером платье&#8209;бюстье с&nbsp;сетчатой юбкой Name",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-7.jpg",
+			"alt" => "Product 14",
+		],
+		"price" => 6590,
+		"likes" => 80,
+		"articul" => "1832-14",
+		"count" => 2,
+	],
+	15 => [
+		"name" => "Платье&#8209;рубашка в&nbsp;бельевом стиле из&nbsp;атласа и&nbsp;кружева Meet&nbsp;Me",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-8.jpg",
+			"alt" => "Product 15",
+		],
+		"price" => 6990,
+		"likes" => 99,
+		"articul" => "1832-15",
+		"count" => 5,
+	],
+	16 => [
+		"name" => "Полупрозрачное платье в&nbsp;викторианском стиле TOP20&nbsp;Studio",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-9.jpg",
+			"alt" => "Product 16",
+		],
+		"price" => 9690,
+		"likes" => 66,
+		"articul" => "1832-16",
+		"count" => 14,
+	],
+	17 => [
+		"name" => "Закрытое платье&#8209;мини из&nbsp;матовой экокожи W&#8209;HITE by&nbsp;WTfC",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-2.jpg",
+			"alt" => "Product 17",
+		],
+		"price" => 7890,
+		"likes" => 0,
+		"articul" => "1832-17",
+		"count" => 9,
+	],
+	18 => [
+		"name" => "Расшитое бисером платье&#8209;бюстье с&nbsp;сетчатой юбкой Name",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-3.jpg",
+			"alt" => "Product 18",
+		],
+		"price" => 6590,
+		"likes" => 1,
+		"articul" => "1832-18",
+		"count" => 1,
+	],
+	19 => [
+		"name" => "Платье&#8209;рубашка в&nbsp;бельевом стиле из&nbsp;атласа и&nbsp;кружева Meet&nbsp;Me",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-4.jpg",
+			"alt" => "Product 19",
+		],
+		"price" => 6990,
+		"likes" => 14,
+		"articul" => "1832-19",
+		"count" => 2,
+	],
+	20 => [
+		"name" => "Полупрозрачное платье в&nbsp;викторианском стиле TOP20&nbsp;Studio",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-5.jpg",
+			"alt" => "Product 20",
+		],
+		"price" => 9690,
+		"likes" => 15,
+		"articul" => "1832-20",
+		"count" => 10,
+	],
+	21 => [
+		"name" => "Закрытое платье&#8209;мини из&nbsp;матовой экокожи W&#8209;HITE by&nbsp;WTfC",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-6.jpg",
+			"alt" => "Product 21",
+		],
+		"price" => 7890,
+		"likes" => 22,
+		"articul" => "1832-21",
+		"count" => 12,
+	],
+	22 => [
+		"name" => "Расшитое бисером платье&#8209;бюстье с&nbsp;сетчатой юбкой Name",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-7.jpg",
+			"alt" => "Product 22",
+		],
+		"price" => 6590,
+		"likes" => 80,
+		"articul" => "1832-22",
+		"count" => 14,
+	],
+	23 => [
+		"name" => "Платье&#8209;рубашка в&nbsp;бельевом стиле из&nbsp;атласа и&nbsp;кружева Meet&nbsp;Me",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-8.jpg",
+			"alt" => "Product 23",
+		],
+		"price" => 6990,
+		"likes" => 99,
+		"articul" => "1832-23",
+		"count" => 10,
+	],
+	24 => [
+		"name" => "Полупрозрачное платье в&nbsp;викторианском стиле TOP20&nbsp;Studio",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-9.jpg",
+			"alt" => "Product 24",
+		],
+		"price" => 9690,
+		"likes" => 66,
+		"articul" => "1832-24",
+		"count" => 2,
+	],
+];
+$productsSpecial = [
+	1 => [
+		"name" => "Пуховик от Commode design",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-1.jpg",
+			"alt" => "Product 1",
+		],
+		"price" => [
+			"old" => 10890,
+			"current" => 7890,
+		],
+	],
+	2  => [
+		"name" => "Деловое платье от Commode design",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-2.jpg",
+			"alt" => "Product 2",
+		],
+		"price" => [
+			"old" => 6990,
+			"current" => 4990,
+		],
+	],
+	3  => [
+		"name" => "Платье&#8209;рубашка в&nbsp;бельевом стиле из&nbsp;атласа и&nbsp;кружева Meet&nbsp;Me",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-3.jpg",
+			"alt" => "Product 3",
+		],
+		"price" => [
+			"old" => 15890,
+			"current" => 13890,
+		],
+	],
+	4  => [
+		"name" => "Полупрозрачное платье в&nbsp;викторианском стиле TOP20&nbsp;Studio",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-4.jpg",
+			"alt" => "Product 4",
+		],
+		"price" => [
+			"old" => 11890,
+			"current" => 9890,
+		],
+	],
+	5  => [
+		"name" => "Закрытое платье&#8209;мини из&nbsp;матовой экокожи W&#8209;HITE by&nbsp;WTfC",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-5.jpg",
+			"alt" => "Product 5",
+		],
+		"price" => [
+			"old" => 22890,
+			"current" => 20890,
+		],
+	],
+	6  => [
+		"name" => "Расшитое бисером платье&#8209;бюстье с&nbsp;сетчатой юбкой Name",
+		"link" => "product.php",
+		"img" => [
+			"url" => "product-6.jpg",
+			"alt" => "Product 6",
+		],
+		"price" => [
+			"old" => 10890,
+			"current" => 7890,
+		],
+	],
+];
+?>
