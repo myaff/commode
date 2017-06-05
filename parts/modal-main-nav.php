@@ -125,9 +125,16 @@
 			</div>
 		</div>
 	</div>
-	<div class="modal-footer main-nav-controls d-flex justify-content-between d-md-none">
+	<div class="modal-footer main-nav-controls d-flex justify-content-between d-md-none" id="modal-footer-accordion">
 		<div class="search-form-wrapper">
-			<button class="btn btn-icon d-md-none search-form-btn" type="button" data-toggle="collapse" data-target="#modal-search-form" aria-label="Открыть форму поиска">
+			<button class="btn btn-icon d-md-none search-form-btn" 
+					type="button" 
+					data-toggle="collapse" 
+					data-target="#modal-search-form" 
+					data-parent="#modal-footer-accordion" 
+					aria-expanded="false" 
+					aria-controls="modal-search-form"
+					aria-label="Открыть форму поиска">
 				<svg class="btn-icon-img"><use xlink:href="#lens"/></svg>
 			</button>
 			<div id="modal-search-form" class="search-form collapse collapse-modal collapse-modal-fullwidth">
@@ -139,7 +146,14 @@
 			</div>
 		</div>
 		<div class="collapse-modal-wrapper btn-wrapper d-inline-block">
-			<a href="telto:+79504219253" role="button" data-toggle="collapse" data-target="#modal-contacts-2" class="btn btn-icon btn-icon-outline btn-bold btn-phone">
+			<a  class="btn btn-icon btn-icon-outline btn-bold btn-phone" 
+				href="telto:+79504219253" 
+				role="button" 
+				data-toggle="collapse" 
+				data-target="#modal-contacts-2" 
+				data-parent="#modal-footer-accordion"
+				aria-expanded="false" 
+				aria-controls="modal-contacts-2">
 				<svg class="btn-icon-img"><use xlink:href="#phone"/></svg>
 				<span class="btn-icon-text btn-icon-text--dashed">8&nbsp;950&nbsp;421&nbsp;92&nbsp;53</span>
 			</a>
